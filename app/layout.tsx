@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BackHomeButton from "./components/BackHomeButton";
+import SideBar from "./components/SideBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,45 +23,17 @@ export default function RootLayout({
               <div className="font-en text-sm tracking-wider">Ru yun, Luo</div>
               <div className="flex gap-3 my-4 items-center">
                 <a href="https://www.instagram.com/ruoyun1005/" className="group">
-                  <div className="bg-[#FFFEFA] hover:bg-[#A7B2CC] w-[40px] h-[40px] rounded-full flex justify-center items-center transition-colors duration-300 ">
+                  <div className="bg-[#FFFEFA] hover:bg-[#A7B2CC] w-[40px] h-[40px] rounded-full flex justify-center items-center transition-colors duration-300 hover:scale-110">
                     <img src="/Instagram.svg" className="w-[20px] h-[20px] transition-all duration-300 group-hover:invert group-hover:brightness-0" />
                   </div>
                 </a>
                 <a href="https://github.com/ruoyun1005" className="group">
-                  <div className="bg-[#FFFEFA] hover:bg-[#A7B2CC] w-[40px] h-[40px] rounded-full flex justify-center items-center transition-colors duration-300 ">
+                  <div className="bg-[#FFFEFA] hover:bg-[#A7B2CC] w-[40px] h-[40px] rounded-full flex justify-center items-center transition-colors duration-300 hover:scale-110">
                     <img src="/Github.svg" className="w-[20px] h-[20px] transition-all duration-300 group-hover:invert group-hover:brightness-0" />
                   </div>
                 </a>
               </div>
-              <div className="w-full flex flex-col gap-2 justify-center items-center">
-            <a href="/about">
-              <div className="w-[200px] h-[80px] bg-center mt-4 rounded-lg bg-[#EEF2F5] hover:bg-[#A7B2CC] transition-colors duration-300 flex justify-center items-center font-en font-bold text-lg hover:text-white">
-                ABOUT
-              </div>
-              </a>
-
-            <a href="/math">
-              <div className="w-[200px] h-[80px] bg-center rounded-lg bg-[#EEF2F5] hover:bg-[#A7B2CC] transition-colors duration-300 flex justify-center items-center font-en font-bold text-lg hover:text-white">
-              MATHEMATIC PROJECT
-              </div>
-            </a>
-
-            <a href="/ai-outreach">
-              <div className="w-[200px] h-[80px] bg-center rounded-lg bg-[#EEF2F5] hover:bg-[#A7B2CC] transition-colors duration-300 flex justify-center items-center font-en font-bold text-lg hover:text-white">
-              AI OUTREACH
-              </div>
-            </a>
-            <a href="/graphic">
-              <div className="w-[200px] h-[80px] bg-center rounded-lg bg-[#EEF2F5] hover:bg-[#A7B2CC] transition-colors duration-300 flex justify-center items-center font-en font-bold text-lg hover:text-white">
-              GRAPHIC DESIGN
-              </div>
-            </a>
-            <a href="/game">
-              <div className="w-[200px] h-[80px] bg-center rounded-lg bg-[#EEF2F5] hover:bg-[#A7B2CC] transition-colors duration-300 flex justify-center items-center font-en font-bold text-lg hover:text-white">
-              3D GAME
-              </div>
-            </a>
-          </div>
+              <SideBar />
             </div>
           <div className="w-full h-full sm:flex-1 min-w-[250px] bg-[#FBFCFE] flex flex-col justify-start items-start rounded-2xl px-[30px] py-[30px] shadow-sm shadow-blue-500/20 overflow-y-auto overflow-x-hidden">
           <div className = "w-full h-full flex gap-2">
