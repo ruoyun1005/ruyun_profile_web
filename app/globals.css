@@ -74,7 +74,7 @@
   font-style: normal;
 }
 .box-shadow {
-  box-shadow: 0 2px 4px -1px rgba(40, 82, 179, 0.5), 0 2px 4px -2px rgba(38, 112, 203, 0.4);
+  box-shadow: 0 2px 4px -1px rgba(110, 144, 222, 0.305), 0 2px 2px 1px rgba(144, 163, 188, 0.134);
 }
 
 .show-gradiant {
@@ -95,6 +95,22 @@
   letter-spacing: 0.1em;
   line-height: 2;
 }
+.bold {
+  display: flex;
+  justify-content: start;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+
+.sub-text {
+  display: flex;
+  justify-content: start;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
 
 .date-text {
   justify-content: end;
@@ -107,7 +123,7 @@
 
 .section-title {
   width: 100%;
-  height: 40px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;

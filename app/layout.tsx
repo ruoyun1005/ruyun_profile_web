@@ -41,12 +41,7 @@ export default function RootLayout({
               <SideBar />
             </div>
           <div className="w-full h-full sm:flex-1 min-w-[250px] bg-[#FBFCFE] flex flex-col justify-start items-start rounded-2xl shadow-sm shadow-blue-500/20 overflow-y-auto overflow-x-hidden">
-          <div className = "w-full h-full flex gap-2 p-8">
-        
-              <BackHomeButton/>
               {children}
-            
-          </div>
           </div>
           
       </div>

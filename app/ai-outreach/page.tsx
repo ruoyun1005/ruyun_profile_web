@@ -1,12 +1,16 @@
 import Image from "next/image";
+import BackHomeButton from "../components/BackHomeButton";
 import CountUp from "../components/CountUp";
 
-export default function Home() {
+export default function aioutreach() {
   return (
     <>
-      <div className="h-full w-full pl-4 flex flex-col">
-        <section>
-          <div className="section-title font-en mt-2">AI OUTREACH CAMPAIGN</div>
+      <div className = "w-full h-full flex flex-row gap-10 p-8">
+          <BackHomeButton/>
+
+          <div>
+            <section>
+          <div className="section-title font-en">AI OUTREACH CAMPAIGN</div>
           <div className="font-zh text ">此專案為一項以推廣 AI 知識為核心的校園計畫，透過講座、工作坊與影音傳播，提升大眾對 AI 的理解與參與。</div>
           <div className="font-zh text">在此專案中，我負責將整體企劃轉化為一致的視覺與溝通系統，包含品牌視覺、海報設計與產品設計。</div>
           
@@ -88,7 +92,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="group w-[260px] h-[175px] mt-4 bg-[#F7C396] rounded-2xl relative overflow-hidden box-shadow">
+                <div className="group w-[260px] h-[175px] mt-8 bg-[#F7C396] rounded-2xl relative overflow-hidden box-shadow">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">   
                     <img src="/media/shorts-icon.svg" className="relative z-10" />
                     <div className="absolute bottom-0 left-0 w-full h-[60px] bg-gradient-to-t from-[#A76B58] to-[#F7C396]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -118,22 +122,17 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="group w-[260px] h-[175px] mt-4 bg-[#F7C396] rounded-2xl relative overflow-hidden box-shadow">
+                <div className="group w-[260px] h-[175px] mt-8 bg-[#F7C396] rounded-2xl relative overflow-hidden box-shadow">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">   
                     <img src="/media/sticker-bg.png" className="relative z-10" />
                     <div className="absolute bottom-0 left-0 w-full h-[60px] bg-gradient-to-t from-[#A76B58] to-[#F7C396]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div className="absolute bottom-4 left-0 w-full flex justify-center gap-1 text-[#FBFCFE] font-bold text-[14px] opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-10">
-                      <span className="font-en">AI</span>
-                      <span className="font-zh">知識快問快答短影音企劃</span>
-                      <span className="font-en">LOGO</span>
+                      <span className="font-zh">呆一布貼圖製作</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="w-[260px] h-[210px] relative overflow-hidden rounded-2xl box-shadow mt-4">
-                  <img src="/media/sticker-bg.png" className="absolute inset-0 object-cover"/>
-                </div>
                 
               </div>
             </div>
@@ -141,11 +140,17 @@ export default function Home() {
 
           <div className="flex flex-col gap-8">
           <div className="section-title">POSTER DESIGN</div>
+
+          
           </div>
             </div>
 
         </section>
-      </div>
+          </div>
+          
+        </div>   
+        
+      
       
 
       
