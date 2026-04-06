@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className="h-full w-full flex relative">
         
-        <div className = "w-full h-full flex flex-row gap-10 p-8 absolute inset-0">
+        <div className = "flex  flex-col lg:flex-row gap-6 lg:gap-10 p-8 w-full overflow-y-auto">
           <BackHomeButton/>
           <section className="">
             <div>

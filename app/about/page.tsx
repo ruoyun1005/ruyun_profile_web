@@ -3,9 +3,9 @@ import BackHomeButton from "../components/BackHomeButton";
 export default function Home() {
   return (
     <>
-      <div className = "w-full h-full flex flex-row gap-10 p-8">
-        <BackHomeButton/>
-        
+      <div className = "flex  flex-col lg:flex-row gap-6 lg:gap-10 w-full overflow-y-auto p-8">
+          <BackHomeButton/>
+  
         <div className=" h-full w-full flex flex-col">
                 <section>
                     <div className="section-title">ABOUT ME</div>
