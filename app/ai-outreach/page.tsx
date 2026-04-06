@@ -14,7 +14,7 @@ export default function aioutreach() {
           <div className="font-zh text">在此專案中，我負責將整體企劃轉化為一致的視覺與溝通系統，包含品牌視覺、海報設計與產品設計。</div>
             
           <section>
-            <div className="grid grid-cols-1 min-[1250px]:grid-cols-2 gap-6 mt-6">
+            <div className="grid grid-cols-1 min-[1250px]:grid-cols-2 gap-6 mt-6 justify-items-center">
               <div className="w-[400px] h-[200px]  relative overflow-auto rounded-2xl hover:scale-105 duration-300">
                 <img src="/media/youtube-bg.png" className="absolute inset-0 object-cover" />
                 <div className="absolute inset-0 bg-[#60606D]/85 inset-shadow-sm shadow-[inset_0_0_20px_rgba(45,45,55,0.8)]" />
@@ -72,7 +72,7 @@ export default function aioutreach() {
         <div className="h-px bg-[#C9D4EE] my-6" />
         
         <section>
-          <div className="grid grid-cols-1 xl:grid-cols-[260px_1fr] gap-16">
+          <div className="grid grid-cols-1 min-[900px]:grid-cols-[260px_1fr] gap-16 justify-items-center">
             <div className="flex flex-col gap-8">
               <div className="flex flex-col">
                 <div className="section-title">VISUAL IDENTITY</div>
@@ -142,7 +142,7 @@ export default function aioutreach() {
           <div className="flex flex-col gap-8">
           <div className="section-title">POSTER DESIGN</div>
 
-          <div className="grid grid-cols-1  min-[500px]:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1  min-[1280px]:grid-cols-2 gap-8">
           <div className="group w-[240px] h-[230px]  bg-[#F7C396] rounded-2xl relative overflow-hidden box-shadow hover:scale-105 duration-300">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">   
                     <img src="/media/poster-1.png" className="relative"/>
