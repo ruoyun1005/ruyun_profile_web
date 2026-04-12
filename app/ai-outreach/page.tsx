@@ -2,70 +2,87 @@ import Image from "next/image";
 import BackHomeButton from "../components/BackHomeButton";
 import CountUp from "../components/CountUp";
 
+const posters = [
+  { src: '/media/poster-1.png',  label: '焦點工作坊－大一新起點' },
+  { src: '/media/poster-2.png',  label: '奇異點工作坊－復盤寫作術 x AI' },
+  { src: '/media/poster-4.png',  label: '2025 PyDay 工作坊' },
+  { src: '/media/poster-6.png',  label: '奇異點工作坊\n負責任地使用生成式影像' },
+  { src: '/media/poster-7.png',  label: '奇異點工作坊－國民AI女友' },
+  { src: '/media/poster-5.png',  label: '奇異點工作坊\nAI智慧與AR眼鏡的未來' },
+  { src: '/media/poster-11.png', label: '奇異點工作坊\n讓Google幫你上班：Apps Script實戰' },
+  { src: '/media/poster-.png',   label: '奇異點工作坊\n實戰! Gemini Veo3，全民導演不是夢' },
+];
+
+const visualCards = [
+  { bg: '#90D5DA', hover: '#57A3A9', src: '/media/diveai-icon.svg',  label: '呆一布呀 YouTube 頻道 LOGO' },
+  { bg: '#F7C396', hover: '#A76B58', src: '/media/shorts-icon.svg', label: 'AI 知識快問快答短影音企劃 LOGO' },
+];
+
+
+const productCards = [
+  { bg: '#8a8a8a', src: '/media/coffee-bg.png',  label: '聯名咖啡包製作' },
+  { bg: '#F7C396', src: '/media/sticker-bg.png', label: '呆一布貼圖製作' },
+];
+
+
+
 export default function aioutreach() {
   return (
     <>
       <div className = "flex  flex-col lg:flex-row gap-6 lg:gap-10 w-full overflow-y-auto p-8">
           <BackHomeButton/>
 
+          {/* Header */}
           <div className="">
             <div className="section-title font-en">AI OUTREACH CAMPAIGN</div>
           <div className="font-zh text ">此專案為一項以推廣 AI 知識為核心的校園計畫，透過講座、工作坊與影音傳播，提升大眾對 AI 的理解與參與。</div>
           <div className="font-zh text">在此專案中，我負責將整體企劃轉化為一致的視覺與溝通系統，包含品牌視覺、海報設計與產品設計。</div>
             
+ 
           <section>
-            <div className="grid grid-cols-1 min-[1250px]:grid-cols-2 gap-6 mt-6 justify-items-center">
-              <div className="w-[400px] h-[200px]  relative overflow-auto rounded-2xl hover:scale-105 duration-300">
-                <img src="/media/youtube-bg.png" className="absolute inset-0 object-cover" />
-                <div className="absolute inset-0 bg-[#60606D]/85 inset-shadow-sm shadow-[inset_0_0_20px_rgba(45,45,55,0.8)]" />
-
-                <div className="absolute inset-0 py-4 px-8 ">
-
-                  <div className="gap-4 flex items-center flex-row">
-                    <img src="/media/youtube-icon.svg"/>
-                    <div className="text-[#A7B2CC] flex items-center gap-1">
-                      <span className="font-zh text font-bold">呆一布呀 </span>
-                      <span className="font-en text font-bold">Diveai </span>
-                      <span className="font-zh text font-bold"> 頻道</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-12 mt-2">
-                    <div className="text-[#FBFCFE] font-zh text font-bold">訂閱人數</div>
-                    <div className="font-en text-[#FBFCFE] text-[96px] font-bold leading-none">< CountUp end = {900}/>+</div>
-                    
-                </div>
-
-                <div className="flex justify-end mt-2">
-                  <div className="font-zh text text-[#A7B2CC]">累計 16 部影片</div>
-                </div>  
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            
+            {/* YouTube */}  
+            <div className="relative rounded-2xl overflow-hidden h-[180px] hover:scale-[1.02] transition-transform duration-300">
+            <img src="/media/youtube-bg.png" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-[#60606D]/85" />
+            <div className="absolute inset-0 p-6 flex flex-col justify-between">
+              <div className="flex items-center gap-3">
+                <img src="/media/youtube-icon.svg" className="w-6 h-6" />
+                <span className="font-zh text-[14px] text-[#A7B2CC] font-bold">呆一布呀 Diveai 頻道</span>
               </div>
-              </div>
-              
-
-              <div className="w-[400px] h-[200px] relative overflow-auto rounded-2xl hover:scale-105 duration-300">
-                <img src="/media/presentation-bg.png" className="absolute inset-0 object-cover" />
-                <div className="absolute inset-0 bg-[#60606D]/85 inset-shadow-sm shadow-[inset_0_0_20px_rgba(45,45,55,0.8)]" />
-
-                <div className="absolute inset-0 py-4 px-8 ">
-
-                  <div className="gap-4 flex items-center flex-row">
-                    <img src="/media/presentation-icon.svg"/>
-                    <div className="text-[#A7B2CC] flex items-center gap-1">
-                      <span className="font-zh text font-bold">⟪奇異點工作坊⟫ 講座</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-10 mt-2">
-                    <div className="text-[#FBFCFE] font-zh text font-bold whitespace-nowrap">參與人數</div>
-                    <div className="font-en text-[#FBFCFE] text-[96px] font-bold leading-none">< CountUp end = {1000}/>+</div>
-                </div>
-
-                <div className="flex justify-end mt-2">
-                  <div className="font-zh text text-[#A7B2CC]">累計 10 場講座</div>
+              <div className="flex items-end justify-between">
+                <span className="font-zh text-[14px] text-[#FBFCFE] font-bold">訂閱人數</span>
+                <div className="flex items-end gap-1">
+                  <span className="font-en text-[#FBFCFE] text-[48px] min-[900px]:text-[64px] lg:text-[96px] font-bold leading-none">
+                    <CountUp end={1000} />+
+                  </span>
                 </div>
               </div>
+              <div className="font-zh text-[14px] text-[#A7B2CC] text-right text-sm">累計 16 部影片</div>
+            </div>
+          </div>
+
+          {/* 講座 */}  
+          <div className="relative rounded-2xl overflow-hidden h-[180px] hover:scale-[1.02] transition-transform duration-300">
+            <img src="/media/presentation-bg.png" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-[#60606D]/85" />
+            <div className="absolute inset-0 p-6 flex flex-col justify-between">
+              <div className="flex items-center gap-3">
+                <img src="/media/presentation-icon.svg" className="w-6 h-6" />
+                <span className="font-zh text-[14px] text-[#A7B2CC] font-bold">⟪奇異點工作坊⟫ 講座</span>
               </div>
+              <div className="flex items-end justify-between">
+                <span className="font-zh text-[14px] text-[#FBFCFE] font-bold">參與人數</span>
+                <div className="flex items-end gap-1">
+                  <span className="font-en text-[#FBFCFE] text-[48px] min-[900px]:text-[64px] lg:text-[96px] font-bold leading-none">
+                    <CountUp end={1000} />+
+                  </span>
+                </div>
+              </div>
+              <div className="font-zh text-[14px] text-[#A7B2CC] text-right text-sm">累計 10 場講座</div>
+            </div>
+          </div>
               </div>
       </section>
         
@@ -142,7 +159,7 @@ export default function aioutreach() {
           <div className="flex flex-col mb-8">
           <div className="section-title">POSTER DESIGN</div>
 
-          <div className="grid grid-cols-1  min-[1280px]:grid-cols-2 gap-8 mt-4">
+          <div className="grid grid-cols-1  min-[1280px]:grid-cols-2 gap-8 mt-6">
           <div className="group w-[240px] h-[230px]  bg-[#F7C396] rounded-2xl relative overflow-hidden box-shadow hover:scale-105 duration-300">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">   
                     <img src="/media/poster-1.png" className="relative"/>

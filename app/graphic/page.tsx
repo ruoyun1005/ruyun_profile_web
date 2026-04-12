@@ -12,7 +12,7 @@ export default function Graphic() {
           <section className="">
             
             <div className="section-title uppercase">graphic design</div>
-            <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-8 justify-items-center my-4">
+            <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-8 justify-items-center mt-4">
               <div>
                 <DesignCard
                 title="應數系系服製作"

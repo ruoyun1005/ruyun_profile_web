@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { div } from "three/tsl";
+
 
 type DesignCardProps = {
     title: string;
@@ -23,7 +23,7 @@ export default function DesignCard({title, images} : DesignCardProps){
 
     return (
         <>
-        <div className="flex w-full h-full flex-col bg-[#F2F6FF] rounded-2xl outline-6 outline-[#E1E9FC] box-shadow p-4">
+        <div className="flex w-full h-full flex-col bg-[#FBFCFE] rounded-2xl outline-2 outline-[#E1E9FC] box-shadow p-4">
             <div className="rounded-[28px] border-2 border-[#C9D4EE] bg-[#FBFCFE] p-1">
                 <div className="relative overflow-hidden rounded-[24px]  bg-[#FBFCFE]">
                     <img src={images[current]}

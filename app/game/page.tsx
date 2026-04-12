@@ -15,7 +15,7 @@ export default function Game() {
         
         <div className="w-full">
         <div className="section-title">3D UNITY GAME</div>
-        <div className="w-full bg-[#F2F6FF] outline-6 outline-[#E1E9FC] rounded-4xl relative p-6 mr-8 box-shadow mt-4"> 
+        <div className="w-full bg-[#FBFCFE] outline-2 outline-[#E1E9FC] rounded-4xl relative p-6 mr-8 box-shadow mt-4"> 
  
             <div className="flex flex-col">
               <div className="text font-zh font-bold mb-4 text-base leading-relaxed">雙人合作闖關遊戲｜戰鬥關卡 × 益智關卡</div>

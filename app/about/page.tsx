@@ -1,139 +1,113 @@
-import Image from "next/image";
 import BackHomeButton from "../components/BackHomeButton";
+
 export default function Home() {
   return (
-    <>
-      <div className = "flex  flex-col lg:flex-row gap-6 lg:gap-10 w-full overflow-y-auto p-8">
-          <BackHomeButton/>
-  
-        <div className=" h-full w-full flex flex-col">
-                <section>
-                    <div className="section-title">ABOUT ME</div>
-                    <div className="font-zh text">喜歡數學  也熱愛設計</div>
-                    <div className="font-zh text">期待在理性與美感之間 找到屬於自己的火花</div>
-                {/* <div className="flex justify-end">
-                    <div className="flex flex-wrap items-center gap-8 font-en text-[10px] font-semibold tracking-[0.5em] leading-[2] mt-2 ml-2">
-                        <div className="bg-[#7C8BB3] text-white rounded-md px-2 flex justify-center items-center">#MATH</div>
-                        <div className="bg-[#7C8BB3] text-white rounded-md px-2 flex justify-center items-center">#DESIGN</div>
-                        <div className="bg-[#7C8BB3] text-white rounded-md px-2 flex justify-center items-center">#AI EDUCATION</div>
+    <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full overflow-y-auto p-8">
+      <BackHomeButton />
+
+      <div className="h-full w-full flex flex-col gap-10">
+
+        {/* ABOUT ME */}
+        <section>
+          <div className="section-title">ABOUT ME</div>
+          <div className="mt-3">
+            <p className="font-zh text-2xl font-bold text-[#3D4A6B] leading-tight tracking-wide">
+              喜歡數學 也熱愛設計
+            </p>
+            <p className="font-zh text-3xl font-bold text-[#3D4A6B] leading-tight tracking-tight">
+              
+            </p>
+            <p className="font-zh text-sm text-[#A7B2CC] mt-3 leading-relaxed tracking-wide">
+              期待在理性與美感之間 找到屬於自己的火花
+            </p>
+          </div>
+          <div className="flex gap-2 mt-4">
+            <span className="font-en text-[10px] tracking-[0.3em] text-[#7C8BB3] border border-[#C9D4EE] rounded-full px-3 py-1">#MATH</span>
+            <span className="font-en text-[10px] tracking-[0.3em] text-[#7C8BB3] border border-[#C9D4EE] rounded-full px-3 py-1">#DESIGN</span>
+            <span className="font-en text-[10px] tracking-[0.3em] text-[#7C8BB3] border border-[#C9D4EE] rounded-full px-3 py-1">#AI</span>
+          </div>
+        </section>
+
+        {/* EDUCATION */}
+        <section>
+          <div className="section-title">EDUCATION</div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-3">
+            <div className="group rounded-xl border border-[#C9D4EE] px-6 py-4 bg-transparent hover:bg-[#F2F6FF] hover:border-[#A7B2CC] transition-all duration-300 hover:scale-[1.02] cursor-default">
+              <div className="font-en text-[9px] tracking-[0.4em] text-[#A7B2CC] mb-2">MAJOR</div>
+              <div className="font-zh font-bold text-xl text-[#3D4A6B]">應用數學系</div>
+              <div className="font-en text-xs text-[#A7B2CC] tracking-widest mt-1">NCCU MATH</div>
+            </div>
+            <div className="group rounded-xl border border-[#C9D4EE] px-6 py-4 bg-transparent hover:bg-[#F2F6FF] hover:border-[#A7B2CC] transition-all duration-300 hover:scale-[1.02] cursor-default">
+              <div className="font-en text-[9px] tracking-[0.4em] text-[#A7B2CC] mb-2">SECOND MAJOR</div>
+              <div className="font-zh font-bold text-xl text-[#3D4A6B]">數位內容學位學程</div>
+              <div className="font-en text-xs text-[#A7B2CC] tracking-widest mt-1">NCCU DCT</div>
+            </div>
+          </div>
+        </section>
+
+        {/* EXPERIENCE */}
+        <section>
+          <div className="section-title">EXPERIENCE</div>
+          <div className="mt-3 flex flex-col">
+            {[
+              { title: 'SITCON學生計算機年會 設計組組長', date: 'Jan 2022 – Sep 2022' },
+              { title: '應用數學系 系學會美宣', date: 'Feb 2024 – Jan 2025' },
+              { title: 'AI普羅米修斯計劃：型塑政大教育的未來構圖 研究獎助生', date: 'Mar 2025 – Jun 2026' },
+              { title: '生成式AI：文字與圖像生成的原理與實務 教學助理', date: 'Sep 2022 – Jan 2026' },
+              { title: '生活中的未來語言：數學、Python與AI 教學助理', date: 'Mar 2026 – Jun 2026' },
+              { title: '設計思考與人工智慧 教學助理', date: 'Mar 2026 – Jun 2026' },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="group grid grid-cols-[1fr_auto] items-center gap-6 py-3 border-b border-[#E8EDF7] hover:bg-[#F2F6FF] hover:px-3 transition-all duration-200 cursor-default rounded"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="font-en text-[9px] text-[#C9D4EE] tracking-widest tabular-nums w-4 shrink-0">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-zh text-sm text-[#4A5568]">{item.title}</span>
                 </div>
-                </div> */}
-                </section>
-                
-                <section>
-                    <div className="section-title mt-4">EDUCATION</div>
-                    
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2">
-                        <div className="rounded-lg border-2 border-[#C9D4EE] px-8 py-2 bg-transparent duration-500 hover:scale-105">
-                          <div className="w-full flex items-center gap-4">
-                            <div className="font-en font-bold text-xs text-[#8A97BF] tracking-[0.5em] whitespace-nowrap">MAJOR</div>
-                            <div className="h-px flex-1 bg-[#C9D4EE] translate-y-[4px]" />
-                          </div>
-
-                          <div className="w-full flex items-end justify-center gap-4 mt-1">
-                            <div className="font-zh font-bold text-xl">應用數學系</div>
-                            <div className="font-en font-bold text-sm text-[#A7B2CC] tracking-[0.2em] whitespace-nowrap">NCCU MATH</div>
-                          </div>
-                        </div>
-                      
-                        <div className="rounded-lg border-2 border-[#C9D4EE] px-8 py-2 bg-transparent duration-500 hover:scale-105">
-                          <div className="w-full flex items-center gap-4">
-                            <div className="font-en font-bold text-xs text-[#8A97BF] tracking-[0.5em] whitespace-nowrap">SECOND MAJOR</div>
-                            <div className="h-px flex-1 bg-[#C9D4EE] translate-y-[4px]" />
-                          </div>
-
-                          <div className="w-full flex items-end justify-center gap-4 mt-1">
-                            <div className="font-zh font-bold text-xl">數位內容學位學程</div>
-                            <div className="font-en font-bold text-sm text-[#A7B2CC] tracking-[0.2em] whitespace-nowrap">NCCU DCT</div>
-                          </div>
-                        </div>
-                      
-                      </div>
-                </section>
-                
-                <section className="flex flex-col gap-2"> 
-                    <div className="section-title mt-4">EXPERIMENCE</div>
-                    <div className="flex justify-center">
-                        <div className="flex flex-col mt-2 border-t border-[#C9D4EE]">
-                            <div className="grid grid-cols-[1fr_auto] items-center border-b border-[#C9D4EE] gap-8">
-                              <div className="font-zh text">SITCON學生計算機年會 設計組組長</div>
-                              <div className="font-en date-text">Jan 2022 - Sep 2022</div>
-                            </div>
-
-                            <div className="grid grid-cols-[1fr_auto] items-center border-b border-[#C9D4EE] gap-8">
-                              <div className="font-zh text">應用數學系 系學會美宣</div>
-                              <div className="font-en date-text">Feb 2024 - Jan 2025</div>
-                            </div>
-
-                            <div className="grid grid-cols-[1fr_auto] items-center border-b border-[#C9D4EE] gap-8">
-                              <div className="font-zh text">AI普羅米修斯計劃：型塑政大教育的未來構圖 研究獎助生</div>
-                              <div className="font-en date-text">Mar 2025 - Jun 2026</div>
-                            </div>
-
-                            <div className="grid grid-cols-[1fr_auto] items-center border-b border-[#C9D4EE] gap-8">
-                              <div className="font-zh text">生成式AI：文字與圖像生成的原理與實務 教學助理</div>
-                              <div className="font-en date-text">Sep 2022 - Jan 2026</div>
-                            </div>
-
-                            <div className="grid grid-cols-[1fr_auto] items-center  border-b border-[#C9D4EE] gap-8">
-                              <div className="font-zh text">生活中的未來語言：數學、Python與AI 教學助理</div>
-                              <div className="font-en date-text">Mar 2026 - Jun 2026</div>
-                            </div>
-
-                            <div className="grid grid-cols-[1fr_auto] items-center border-b border-[#C9D4EE] gap-8">
-                              <div className="font-zh text">設計思考與人工智慧 教學助理</div>
-                              <div className="font-en date-text">Mar 2026 - Jun 2026</div>
-                            </div>
-                    </div>  
-                    </div>
-                </section>
-                
-                <div className="section-title mt-4">SKILLS</div>
-                <div className="w-full flex items-center justify-center gap-5 mt-4 ml-8 px-8 translate-x-[-30px]">
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-row justify-center gap-16">
-                    <div className="sub-section-title">TOOL USED</div>
-                        <div className="flex flex-wrap items-center gap-4 ">
-                            <img src="/illustrator.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="/photoshop.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="/aftereffect.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="/affinity.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="/figma.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="/blender.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="/unity.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="vscode.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                            <img src="procreate.svg" className="w-[36px] h-[36px] duration-300 hover:scale-110"/>
-                        </div>
-                  </div>
-                  <div className="h-px bg-[#C9D4EE]" />
-                  <div className="flex flex-row justify-center">
-                    <div className="w-full flex items-center justify-start gap-15">
-                  <div className="sub-section-title">LANGUAGES</div>
-                  <div className="flex flex-wrap  items-center gap-4">
-                              <img src="/python.svg" className="w-[36px] h-[36px]  duration-300 hover:scale-110"/>
-                              <img src="/cplusplus.svg" className="w-[36px] h-[36px]  duration-300 hover:scale-110"/>
-                          </div>
-                </div>
-                </div>
-                </div>
-                
-                  
-                </div>
-                
-                  
-                
-                
-
+                <span className="font-en text-[10px] text-[#A7B2CC] tracking-wider whitespace-nowrap">{item.date}</span>
               </div>
-      </div>
-      
-      
-      
+            ))}
+          </div>
+        </section>
 
-      
-      
-      
-      
-    </>
+        {/* SKILLS */}
+        <section className="pb-8">
+          <div className="section-title">SKILLS</div>
+          <div className="mt-4 flex flex-col gap-5">
+            <div>
+              <div className="sub-section-title mb-3">TOOL USED</div>
+              <div className="flex flex-wrap gap-6">
+                {['illustrator','photoshop','aftereffect','affinity','figma','blender','unity','vscode','procreate'].map(tool => (
+                  <div key={tool} className="group relative">
+                    <img src={`/${tool}.svg`} className="w-9 h-9 transition-all duration-200 hover:scale-110 hover:-translate-y-1" />
+                    <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-en text-[9px] text-[#A7B2CC] tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                      {tool}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="h-px bg-[#E8EDF7] mt-2" />
+            <div>
+              <div className="sub-section-title mb-3">LANGUAGES</div>
+              <div className="flex gap-4">
+                {['python','cplusplus'].map(lang => (
+                  <div key={lang} className="group relative">
+                    <img src={`/${lang}.svg`} className="w-9 h-9 transition-all duration-200 hover:scale-110 hover:-translate-y-1" />
+                    <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-en text-[10px] text-[#A7B2CC] tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                      {lang}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
   );
 }

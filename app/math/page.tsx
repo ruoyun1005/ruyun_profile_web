@@ -1,7 +1,29 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
 import BackHomeButton from "../components/BackHomeButton";
 
 export default function Math() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  const projects = [
+    {
+      num: '1',
+      title: 'Mathematical Structure and Geometric Foundations of Bézier Curves',
+      desc: '探討 Bézier 曲線背後的數學結構，從仿射幾何出發，推導出 de Casteljau 演算法與一般 Bézier 曲線公式，並實作互動視覺化工具驗證幾何性質。',
+      tags: ['Curves', 'Geometry', 'Visualization'],
+      demo: 'https://ruoyun1005.github.io/CAGD-Bezier-Curve-Visualization/',
+      poster: '/media/math-poster.png',
+    },
+    {
+      num: '2',
+      title: 'Bézier Surface — In Progress',  // 改成你的標題
+      desc: '將 Bézier 曲線的數學結構延伸至三維曲面，探討雙變數 Bernstein 多項式與曲面連續性條件。',  // 改成你的描述
+      tags: ['Surface', '3D', 'Geometry'],
+      demo: '#',
+      poster: null,  // 還沒有海報就放 null
+    },
+  ];
+
   return (
     <>
       <div
@@ -11,132 +33,86 @@ export default function Math() {
           backgroundRepeat: "no-repeat",
           backgroundSize: "1200px",
         }}
-      ></div>
-      
-  <div className="relative z-0 min-h-full w-full flex min-w-[250px] overflow-y-auto p-8">
-    <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full">
-     
-        <BackHomeButton />
-     
-      <div className="w-full">
-        
-        {/* 最上方標題 */}
-        <section>
-          <div>
-            <div className="section-title uppercase mb-2">
-              Mathematical Structure and Geometric Foundations of Bézier Curves
-            </div>
+      />
 
-            <div className="font-en sub-text mb-2">
-              This project explores the mathematical ideas behind Bézier curves and shows how smooth forms can be built through geometry and visual construction.
-            </div>
+      {/* Lightbox */}
+      {open !== null && projects[open].poster && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-6 cursor-zoom-out"
+          onClick={() => setOpen(null)}
+        >
+          <img
+            src={projects[open].poster!}
+            alt="Research Poster"
+            className="max-h-full max-w-full rounded-2xl object-contain"
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
 
-            <div className="flex flex-wrap sm:justify-end items-center gap-4 mr-4">
-              <div className="font-en text font-bold uppercase bg-[#C9D4EE] text-[#FBFCFE] rounded-full px-6 py-1">
-                Geometry
-              </div>
-              <div className="font-en text font-bold uppercase bg-[#C9D4EE] text-[#FBFCFE] rounded-full px-6 py-1">
-                curves
-              </div>
-              <div className="font-en text font-bold uppercase bg-[#C9D4EE] text-[#FBFCFE] rounded-full px-6 py-1">
-                Visualization
-              </div>
-            </div>
+      <div className="relative z-10 w-full overflow-y-auto p-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full h-full">
+          <BackHomeButton />
 
-            {/* 下面一堆框框區 */}
-            <div className="w-full grid gap-4 sm:gap-6 min-w-0 mt-8
-                            grid-cols-1  min-[500px]:grid-cols-2  min-[950px]:grid-cols-[280px_minmax(0,1fr)] min-[950px]:items-start">
-              {/* 左邊框框 */}
-                {/* 按鈕 */}
-                <section className="min-w-0 order-1 min-[500px]:col-start-1  min-[500px]:row-start-1">
-                  <div className="bg-[#FBFCFE] rounded-2xl box-shadow p-8 flex flex-col justify-center ">
+          <div className="w-full h-full flex flex-col gap-4">
+
+            {projects.map((p, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm shadow-blue-500/20 relative overflow-hidden outline-2 outline-[#E1E9FC] ">
+                {/* 背景大數字 */}
+                <div className="absolute right-6 top-1/2 -translate-y-1/4 font-en font-bold text-[120px] leading-none text-[#C9D4EE]/20 select-none pointer-events-none">
+                  {p.num}
+                </div>
+
+                <div className="relative z-10 max-w-2xl">
+                  <div className="section-title">Mathematical Project</div>
+                  <h2 className="font-en font-bold text-xl text-[#3D4A6B] leading-snug tracking-widest mt-2 mb-3">
+                    {p.title}
+                  </h2>
+                  <p className="font-zh text-sm text-[#6B7280] leading-relaxed mb-4">
+                    {p.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {p.tags.map(t => (
+                      <span key={t} className="font-en text-[10px] tracking-[0.2em] uppercase border border-[#C9D4EE] rounded-full px-3 py-1 text-[#8A97BF]">
+                        {t}
+                      </span>
+                    ))}
                   </div>
-                </section>
-  
-                {/* 左上框框 */}
-                <section className="min-w-0 order-2 
-                    min-[500px]:order-3  min-[500px]:col-start-1  min-[500px]:row-start-2
-                    min-[950px]:order-2  min-[950px]:col-start-auto  min-[950px]:row-start-auto">
-                  <div className="bg-[#FBFCFE] rounded-2xl box-shadow p-8 flex flex-col justify-center gap-4">
-                    <div className="font-en text-[20px] text-center flex justify-center uppercase tracking-widest">
-                      Applied Mathematics
-                    </div>
-                    <div className="flex justify-center">
-                      <img src="/media/X.svg" alt="X" className="w-[24px] h-[24px]"/>
-                    </div>
-                    <div className="font-en text-[20px]  text-center flex justify-center uppercase tracking-widest">
-                      Computational Geometry
-                    </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href={p.demo}
+                      className="inline-flex items-center gap-2 font-en font-bold text-[16px] tracking-wider border-2 border-[#C9D4EE] rounded-lg px-4 py-2 text-[#4A5568] hover:bg-[#F2F6FF] hover:text-[#3D4A6B] transition-all duration-200"
+                    >
+                      → Open Interactive Demo
+                    </a>
+                    {p.poster && (
+                      <button
+                        onClick={() => setOpen(i)}
+                        className="inline-flex items-center gap-2 font-en font-bold text-[16px] tracking-wider border-2 border-[#C9D4EE] rounded-lg px-4 py-2 text-[#4A5568] hover:bg-[#F2F6FF] hover:text-[#3D4A6B] transition-all duration-200"
+                      >
+                        → View Research Poster
+                      </button>
+                    )}
                   </div>
-                </section>
+                </div>
+              </div>
+            ))}
 
-                
-                {/* 左下框框 */}
-                <section className=" min-w-0 order-3
-                  min-[500px]:order-2 min-[500px]:col-start-2  min-[500px]:row-start-1  min-[500px]:row-span-2
-                  min-[950px]:order-3  min-[950px]:col-start-auto  min-[950px]:row-start-auto  min-[950px]:row-span-2">
-                  <div className="bg-[#FBFCFE] rounded-2xl box-shadow p-8 flex flex-col justify-center ">
-                    <div className="section-title">CONCEPT FLOW</div>
-
-                    <div className="flex flex-col gap-4 ml-4 mt-2 relative">
-                      <div className="absolute left-[6px] top-2 bottom-2 w-[2px] bg-[#C9D4EE]" />
-
-                      <div className="flex flex-row gap-8 items-center relative z-10">
-                        <div className="h-[14px] w-[14px] bg-[#C9D4EE] rounded-full" />
-                        <div className="font-en text-[16px] font-bold uppercase tracking-widest">
-                          Affine Geometry
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row gap-8 items-center relative z-10">
-                        <div className="h-[14px] w-[14px] bg-[#C9D4EE] rounded-full" />
-                        <div className="font-en text-[16px] font-bold uppercase tracking-widest">
-                          Important Properties
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row gap-8 items-center relative z-10">
-                        <div className="h-[14px] w-[14px] bg-[#C9D4EE] rounded-full" />
-                        <div className="font-en text-[16px] font-bold uppercase tracking-widest">
-                          de Casteljau Algorithm
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row gap-8 items-center relative z-10">
-                        <div className="h-[14px] w-[14px] bg-[#C9D4EE] rounded-full" />
-                        <div className="font-en text-[16px] font-bold uppercase tracking-widest">
-                          General Bézier Curve
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row gap-8 items-center relative z-10">
-                        <div className="h-[14px] w-[14px] bg-[#C9D4EE] rounded-full" />
-                        <div className="font-en text-[16px] font-bold uppercase tracking-widest">
-                          Visualization
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                
             
-
-              {/* 右邊 */}
-              <div className="flex mb-8 
-                              min-[500px]:col-span-2  min-[500px]:col-start-1 min-[500px]:row-start-3  
-                              min-[950px]:col-span-1  min-[950px]:row-span-3  min-[950px]:col-start-2  min-[950px]:row-start-1">
-                <section className="bg-[#FBFCFE] rounded-2xl box-shadow h-[600px] w-full "></section>
+          </div>
+        </div>
+        {/* Meta */}
+        <div className="h-px bg-[#C9D4EE]"/>
+        <div className="px-2 pb-2  flex justify-center items-end mt-2">
+              <div className="font-mono text-[10px] text-[#A7B2CC] flex flex-wrap gap-x-12 gap-y-1">
+                <span>Student ── Ru-Yun Luo</span>
+                <span>Advisor ── Prof. Pu-Zhao Kow</span>
+                <span>NCCU Department of Mathematical Science</span>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
 
-        
-       
-  
+      </div>
+    
     </>
   );
 }
