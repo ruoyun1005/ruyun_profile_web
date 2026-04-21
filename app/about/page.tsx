@@ -53,7 +53,7 @@ export default function Home() {
               { title: 'SITCON學生計算機年會 設計組組長', date: 'Jan 2022 – Sep 2022' },
               { title: '應用數學系 系學會美宣', date: 'Feb 2024 – Jan 2025' },
               { title: 'AI普羅米修斯計劃：型塑政大教育的未來構圖 研究獎助生', date: 'Mar 2025 – Jun 2026' },
-              { title: '生成式AI：文字與圖像生成的原理與實務 教學助理', date: 'Sep 2022 – Jan 2026' },
+              { title: '生成式AI：文字與圖像生成的原理與實務 教學助理', date: 'Sep 2025 – Jan 2026' },
               { title: '生活中的未來語言：數學、Python與AI 教學助理', date: 'Mar 2026 – Jun 2026' },
               { title: '設計思考與人工智慧 教學助理', date: 'Mar 2026 – Jun 2026' },
             ].map((item, i) => (

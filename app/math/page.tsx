@@ -54,7 +54,7 @@ export default function Math() {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full h-full">
           <BackHomeButton />
 
-          <div className="w-full h-full flex flex-col gap-4">
+          <div className="w-full h-full flex flex-col gap-4 p-4">
 
             {projects.map((p, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm shadow-blue-500/20 relative overflow-hidden outline-2 outline-[#E1E9FC] ">
@@ -78,7 +78,7 @@ export default function Math() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3 flex-wrap">
+                  <div className="flex gap-3 flex-wrap p-2">
                     <a
                       href={p.demo}
                       className="inline-flex items-center gap-2 font-en font-bold text-[16px] tracking-wider border-2 border-[#C9D4EE] rounded-lg px-4 py-2 text-[#4A5568] hover:bg-[#F2F6FF] hover:text-[#3D4A6B] transition-all duration-200"
@@ -102,7 +102,7 @@ export default function Math() {
           </div>
         </div>
         {/* Meta */}
-        <div className="h-px bg-[#C9D4EE]"/>
+        <div className=" flex h-px bg-[#C9D4EE]"/>
         <div className="px-2 pb-2  flex justify-center items-end mt-2">
               <div className="font-mono text-[10px] text-[#A7B2CC] flex flex-wrap gap-x-12 gap-y-1">
                 <span>Student ── Ru-Yun Luo</span>
