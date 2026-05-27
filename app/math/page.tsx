@@ -16,11 +16,11 @@ export default function Math() {
     },
     {
       num: '2',
-      title: 'Bézier Surface — In Progress',  // 改成你的標題
-      desc: '將 Bézier 曲線的數學結構延伸至三維曲面，探討雙變數 Bernstein 多項式與曲面連續性條件。',  // 改成你的描述
-      tags: ['Surface', '3D', 'Geometry'],
-      demo: '#',
-      poster: null,  // 還沒有海報就放 null
+      title: 'Geometric Foundations of Freeform B-Spline Patches', 
+      desc: '將 B-spline 曲線的數學結構延伸至三維曲面，以張量積方式實作參數曲面，並透過互動式視覺化工具即時觀察控制點對曲面形狀的影響。',
+      tags: ['Surface', '3D', 'B-Spline'],
+      demo: 'https://b-spline-patches.vercel.app/',
+      poster: '/media/math-poster-2.png', 
     },
   ];
 
